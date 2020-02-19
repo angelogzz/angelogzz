@@ -1,0 +1,11 @@
+{
+  "development": {
+    "apiUrl": "https://appangelogzz.herokuapp.com",
+    "contentApiKey": "66a36146bc5e49ef10e3c1dbe3",
+    "version": "v2"
+  },
+  "production": {
+    "apiUrl": "https://appangelogzz.herokuapp.com",
+    "contentApiKey": "66a36146bc5e49ef10e3c1dbe3"
+  }
+}
