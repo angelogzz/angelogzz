@@ -2,11 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { Tags } from '@tryghost/helpers-gatsby'
-import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 
 const PostCard = ({ post }) => {
     const url = `/${post.slug}/`
-    const readingTime = readingTimeHelper(post)
 
     return (
         <Link to={url} className="post-card">
@@ -28,10 +26,9 @@ const PostCard = ({ post }) => {
                             <img className="default-avatar" src="/images/icons/avatar.svg" alt={post.primary_author.name}/>
                         }
                     </div>
-                    <span>{ post.primary_author.name }</span>
                 </div>
                 <div className="post-card-footer-right">
-                    <div>{readingTime}</div>
+                    <div>Leer más</div>
                 </div>
             </footer>
         </Link>
