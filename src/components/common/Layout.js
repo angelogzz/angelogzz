@@ -18,7 +18,7 @@ import '../../styles/app.css'
 * styles, and meta data for each page.
 *
 */
-const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
+const DefaultLayout = ({ data, children, bodyClass }) => {
     const site = data.allGhostSettings.edges[0].node
     const twitterUrl = site.twitter ? `https://twitter.com/angelogzz87` : null
     const facebookUrl = site.facebook ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}` : null
@@ -35,7 +35,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
                 <div className="viewport-top">
                     {/* The main header section on top of the screen */}
-                    <header className="site-head" style={{ ...site.cover_image && { backgroundImage: `url(${site.cover_image})` } }}>
+                    <header className="site-head">
                         <div className="container">
                             <div className="site-mast">
                                 <div className="site-mast-left">
@@ -52,19 +52,17 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                     <a className="site-nav-item" href={ `https://github.com/angelogzz` } target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="https://arepa.dev/images/icons/github.png" alt="angelogzz" /></a>
                                 </div>
                             </div>
-                            { isHome ?
-                                <div className="site-banner">
-                                    <h1 className="site-banner-title">{site.title}</h1>
-                                    <p className="site-banner-desc">Ciberseguridad, Criptomonedas y Leyes.</p>
-                                </div> :
-                                null}
+                            <div className="site-banner">
+                                <h1 className="site-banner-title">angelogzz</h1>
+                                <p className="site-banner-desc">Ciberseguridad, Criptomonedas y Leyes.</p>
+                            </div>
                             <nav className="site-nav">
                                 <div className="site-nav-left">
                                     {/* The navigation items as setup in Ghost */}
                                     <Navigation data={site.navigation} navClass="site-nav-item" />
                                 </div>
                                 <div className="site-nav-right">
-                                    <Link className="site-nav-button" to="/about">Acerca de</Link>
+                                    <Link className="site-nav-button" to="/about">Acerca de mi</Link>
                                 </div>
                             </nav>
                         </div>
